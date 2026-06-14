@@ -1129,8 +1129,8 @@ export default {
   },
   "141jav": {
     "routes": {
-      "/:type/:keyword{.*}?": {
-        "path": "/:type/:keyword{.*}?",
+      "/:type/:keyword{.+}?": {
+        "path": "/:type/:keyword{.+}?",
         "categories": [
           "multimedia"
         ],
@@ -1159,8 +1159,8 @@ export default {
   },
   "141ppv": {
     "routes": {
-      "/:type/:keyword{.*}?": {
-        "path": "/:type/:keyword{.*}?",
+      "/:type/:keyword{.+}?": {
+        "path": "/:type/:keyword{.+}?",
         "categories": [
           "multimedia"
         ],
@@ -10328,7 +10328,7 @@ export default {
       "/topics/:topic?": {
         "path": [
           "/topics/:topic?",
-          "/nav/:nav{.*}?"
+          "/nav/:nav{.+}?"
         ],
         "categories": [
           "traditional-media"
@@ -10366,10 +10366,10 @@ export default {
         "location": "topics.ts",
         "module": () => import('@/routes/apnews/topics.ts')
       },
-      "/nav/:nav{.*}?": {
+      "/nav/:nav{.+}?": {
         "path": [
           "/topics/:topic?",
-          "/nav/:nav{.*}?"
+          "/nav/:nav{.+}?"
         ],
         "categories": [
           "traditional-media"
@@ -13508,11 +13508,15 @@ export default {
   },
   "bangumi.moe": {
     "routes": {
-      "/*": {
-        "path": "/*",
+      "/:tags{.+}?": {
+        "path": "/:tags{.+}?",
         "categories": [
           "anime"
         ],
+        "example": "/bangumi.moe",
+        "parameters": {
+          "tags": "Tags, empty by default, multiple tags separated by `/`"
+        },
         "radar": [
           {
             "source": [
@@ -13521,7 +13525,6 @@ export default {
           }
         ],
         "name": "Latest",
-        "example": "/bangumi.moe",
         "maintainers": [
           "nczitzk"
         ],
@@ -48621,8 +48624,8 @@ export default {
   },
   "gisreportsonline": {
     "routes": {
-      "/:path{.*}": {
-        "path": "/:path{.*}",
+      "/:path{.+}?": {
+        "path": "/:path{.+}?",
         "categories": [
           "new-media"
         ],
