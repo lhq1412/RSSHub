@@ -57499,6 +57499,37 @@ export default {
   },
   "gov/zj": {
     "routes": {
+      "/zfcg-helper": {
+        "path": "/zfcg-helper",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/zj/zfcg-helper",
+        "name": "政府采购网分类代码",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "url": "zfcg.czt.zj.gov.cn",
+        "location": "czt/zfcg-helper.ts",
+        "module": () => import('@/routes/gov/zj/czt/zfcg-helper.ts')
+      },
+      "/zfcg/:code?": {
+        "path": "/zfcg/:code?",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/zj/zfcg/110-606633",
+        "parameters": {
+          "code": "分类代码，默认为 110-600268（采购意向公开）"
+        },
+        "name": "政府采购公告",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "url": "zfcg.czt.zj.gov.cn",
+        "location": "czt/zfcg.ts",
+        "module": () => import('@/routes/gov/zj/czt/zfcg.ts')
+      },
       "/ningbogzw-notice/:colId?": {
         "path": "/ningbogzw-notice/:colId?",
         "categories": [
