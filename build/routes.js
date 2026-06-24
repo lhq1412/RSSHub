@@ -24025,6 +24025,35 @@ export default {
     "url": "cebbank.com",
     "lang": "zh-CN"
   },
+  "cefco": {
+    "routes": {
+      "/research/news": {
+        "path": "/research/news",
+        "categories": [
+          "other"
+        ],
+        "example": "/cefco/research/news",
+        "radar": [
+          {
+            "source": [
+              "www.cefco.cn/research/news.html"
+            ]
+          }
+        ],
+        "name": "观点",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "url": "www.cefco.cn/research/news.html",
+        "location": "news.ts",
+        "module": () => import('@/routes/cefco/news.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "亚布力中国企业家论坛",
+    "url": "www.cefco.cn",
+    "lang": "zh-CN"
+  },
   "ceph": {
     "routes": {
       "/blog/:topic?": {
