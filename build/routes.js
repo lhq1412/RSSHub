@@ -56124,6 +56124,30 @@ export default {
     ],
     "lang": "zh-CN"
   },
+  "gov/nppa": {
+    "routes": {
+      "/:path{.+}": {
+        "path": "/:path{.+}",
+        "name": "通用",
+        "example": "/gov/nppa/xxfb/ywxx",
+        "parameters": {
+          "path": "路径，留空默认 `xxfb/ywxx`"
+        },
+        "maintainers": [
+          "y2361547758"
+        ],
+        "location": "channels.ts",
+        "module": () => import('@/routes/gov/nppa/channels.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "国家新闻出版署",
+    "url": "www.nppa.gov.cn",
+    "categories": [
+      "government"
+    ],
+    "lang": "zh-CN"
+  },
   "gov/nrta": {
     "routes": {
       "/dsj/:category?": {
