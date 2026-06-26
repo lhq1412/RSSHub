@@ -99386,6 +99386,54 @@
     "url": "paulgraham.com",
     "lang": "en"
   },
+  "pawchive": {
+    "routes": {
+      "/:service/:id": {
+        "path": "/:service/:id",
+        "categories": [
+          "anime"
+        ],
+        "example": "/pawchive/fanbox/22445",
+        "parameters": {
+          "service": "service, either `patreon` or `fanbox`",
+          "id": "User id, can be found in URL"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "nsfw": true
+        },
+        "radar": [
+          {
+            "source": [
+              "pawchive.st/"
+            ],
+            "target": ""
+          },
+          {
+            "source": [
+              "pawchive.st/:service/user/:id"
+            ],
+            "target": "/:service/:id"
+          }
+        ],
+        "name": "Posts",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "index.tsx",
+        "module": "() => import('@/routes/pawchive/index.tsx')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Pawchive",
+    "url": "pawchive.st",
+    "lang": "en"
+  },
   "pconline": {
     "routes": {
       "/focus/:category?": {
