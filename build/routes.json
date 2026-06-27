@@ -137170,6 +137170,41 @@
         "location": "hots.ts",
         "module": "() => import('@/routes/xueqiu/hots.ts')"
       },
+      "/stock_info/:id/:type?": {
+        "path": "/stock_info/:id/:type?",
+        "categories": [
+          "finance"
+        ],
+        "example": "/xueqiu/stock_info/SZ000002",
+        "parameters": {
+          "id": "股票代码（需要带上交易所）",
+          "type": "动态的类型, 不填则为股票公告"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "xueqiu.com/S/:id",
+              "xueqiu.com/s/:id"
+            ],
+            "target": "/stock_info/:id"
+          }
+        ],
+        "name": "股票信息",
+        "maintainers": [
+          "YuYang"
+        ],
+        "description": "| 全部 | 讨论    | 交易  | 资讯 | 公告         |\n| ---- | ------- | ----- | ---- | ------------ |\n| all  | discuss | trans | news | announcement |",
+        "location": "stock-info.ts",
+        "module": "() => import('@/routes/xueqiu/stock-info.ts')"
+      },
       "/user/:id/:type?": {
         "path": "/user/:id/:type?",
         "categories": [
@@ -137232,41 +137267,6 @@
         "maintainers": [],
         "location": "stock-comments.tsx",
         "module": "() => import('@/routes/xueqiu/stock-comments.tsx')"
-      },
-      "/stock_info/:id/:type?": {
-        "path": "/stock_info/:id/:type?",
-        "categories": [
-          "finance"
-        ],
-        "example": "/xueqiu/stock_info/SZ000002",
-        "parameters": {
-          "id": "股票代码（需要带上交易所）",
-          "type": "动态的类型, 不填则为股票公告"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "xueqiu.com/S/:id",
-              "xueqiu.com/s/:id"
-            ],
-            "target": "/stock_info/:id"
-          }
-        ],
-        "name": "股票信息",
-        "maintainers": [
-          "YuYang"
-        ],
-        "description": "| 公告         | 新闻 | 研报     |\n| ------------ | ---- | -------- |\n| announcement | news | research |",
-        "location": "stock-info.ts",
-        "module": "() => import('@/routes/xueqiu/stock-info.ts')"
       },
       "/today": {
         "path": "/today",
