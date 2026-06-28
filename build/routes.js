@@ -128848,7 +128848,6 @@ export default {
           "university"
         ],
         "example": "/uestc/auto",
-        "parameters": {},
         "features": {
           "requireConfig": false,
           "requirePuppeteer": true,
