@@ -118513,6 +118513,60 @@
     "url": "swpu.edu.cn",
     "lang": "zh-CN"
   },
+  "sxhm": {
+    "routes": {
+      "/announcement": {
+        "path": "/announcement",
+        "categories": [
+          "travel"
+        ],
+        "example": "/sxhm/announcement",
+        "parameters": {},
+        "name": "Announcements",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.sxhm.com/info/announcement.html"
+            ],
+            "target": "/announcement"
+          }
+        ],
+        "location": "announcement.ts",
+        "module": "() => import('@/routes/sxhm/announcement.ts')"
+      },
+      "/temporary": {
+        "path": "/temporary",
+        "categories": [
+          "travel"
+        ],
+        "example": "/sxhm/temporary",
+        "parameters": {},
+        "name": "Special Exhibition",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.sxhm.com/Temporary.html"
+            ],
+            "target": "/temporary"
+          }
+        ],
+        "location": "temporary.tsx",
+        "module": "() => import('@/routes/sxhm/temporary.tsx')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Shaanxi History Museum",
+    "url": "www.sxhm.com/",
+    "zh": {
+      "name": "陕西历史博物馆"
+    }
+  },
   "sycl": {
     "routes": {
       "/:feed?": {
