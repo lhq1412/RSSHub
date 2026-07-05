@@ -90510,6 +90510,40 @@ export default {
     "url": "jwc.njit.edu.cn",
     "lang": "zh-CN"
   },
+  "njmuseum": {
+    "routes": {
+      "/exhibitionIndex/:type?": {
+        "path": "/exhibitionIndex/:type?",
+        "categories": [
+          "travel"
+        ],
+        "example": "/njmuseum/exhibitionIndex/review",
+        "parameters": {
+          "type": "Exhibition type, supported values: review (展览回顾) | abroad (赴外展览) | virtual (虚拟展厅) | forecast (展览预告). Default: Current Exhibitions (正在展出)."
+        },
+        "name": "Exhibitions",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.njmuseum.com/zh/exhibitionIndex"
+            ],
+            "target": "/exhibitionIndex"
+          }
+        ],
+        "location": "exhibitionindex.tsx",
+        "module": () => import('@/routes/njmuseum/exhibitionindex.tsx')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Nanjing Museum",
+    "url": "www.njmuseum.com/zh",
+    "zh": {
+      "name": "南京博物院"
+    }
+  },
   "njnu": {
     "routes": {
       "/ceai/:type": {
@@ -141587,6 +141621,40 @@ export default {
     "name": "浙江省土地使用权网上交易系统",
     "url": "zjgtjy.cn",
     "lang": "zh-CN"
+  },
+  "zjmuseum": {
+    "routes": {
+      "/exhibition/:type?": {
+        "path": "/exhibition/:type?",
+        "categories": [
+          "travel"
+        ],
+        "example": "/zjmuseum/exhibition/ondisplay",
+        "parameters": {
+          "type": "Temporary Exhibition type, supported values: ondisplay （正在展出）、forecast（即将开始）、review（展览回顾）. Default: All exhibitions (ondisplay, forecast and review)."
+        },
+        "name": "Temporary Exhibition",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.zjmuseum.com.cn/cn/"
+            ],
+            "target": "/exhibition/:type?"
+          }
+        ],
+        "location": "temporaryexhibition.tsx",
+        "module": () => import('@/routes/zjmuseum/temporaryexhibition.tsx')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Zhejiang Provincial Museum",
+    "url": "www.zjmuseum.com.cn/cn/",
+    "zh": {
+      "name": "浙江省博物馆"
+    }
   },
   "zjol": {
     "routes": {
