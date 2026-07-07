@@ -123221,6 +123221,31 @@ export default {
   },
   "telegram": {
     "routes": {
+      "/stickerpack/:name": {
+        "path": "/stickerpack/:name",
+        "categories": [
+          "social-media"
+        ],
+        "view": 2,
+        "example": "/telegram/stickerpack/DIYgod",
+        "parameters": {
+          "name": "Sticker Pack name, available in the sharing URL"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Sticker Pack",
+        "maintainers": [
+          "DIYgod"
+        ],
+        "location": "stickerpack.ts",
+        "module": () => import('@/routes/telegram/stickerpack.ts')
+      },
       "/media/:entityName/:messageId": {
         "path": "/media/:entityName/:messageId",
         "categories": [
@@ -123253,31 +123278,6 @@ export default {
         "description": "::: tip\nServes telegram media like pictures, video or files.\n:::",
         "location": "channel-media.ts",
         "module": () => import('@/routes/telegram/channel-media.ts')
-      },
-      "/stickerpack/:name": {
-        "path": "/stickerpack/:name",
-        "categories": [
-          "social-media"
-        ],
-        "view": 2,
-        "example": "/telegram/stickerpack/DIYgod",
-        "parameters": {
-          "name": "Sticker Pack name, available in the sharing URL"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "Sticker Pack",
-        "maintainers": [
-          "DIYgod"
-        ],
-        "location": "stickerpack.ts",
-        "module": () => import('@/routes/telegram/stickerpack.ts')
       },
       "/stories/:username/:story?": {
         "path": "/stories/:username/:story?",
