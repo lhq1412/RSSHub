@@ -76680,7 +76680,7 @@ export default {
             "target": ""
           }
         ],
-        "name": "Unknown",
+        "name": "Layoff Data Tracker",
         "maintainers": [
           "BrandNewLifeJackie26"
         ],
