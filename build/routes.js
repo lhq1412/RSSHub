@@ -16771,6 +16771,62 @@ export default {
     },
     "lang": "de"
   },
+  "lnmuseum": {
+    "routes": {
+      "/information": {
+        "path": "/information",
+        "categories": [
+          "travel"
+        ],
+        "example": "/lnmuseum/information",
+        "params": {},
+        "name": "Information",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.lnmuseum.com.cn"
+            ],
+            "target": "/information"
+          }
+        ],
+        "location": "information.ts",
+        "module": () => import('@/routes/lnmuseum/information.ts')
+      },
+      "/exhibition/temporary/:type?": {
+        "path": "/exhibition/temporary/:type?",
+        "categories": [
+          "travel"
+        ],
+        "example": "/lnmuseum/exhibition/temporary/now",
+        "params": {
+          "type": "Temporary Exhibition type, supported values: now （正在展出）、past（展览回顾）。Default: All temporary exhibitions (now and past)."
+        },
+        "name": "Temporary Exhibition",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.lnmuseum.com.cn"
+            ],
+            "target": "/exhibition/temporary"
+          }
+        ],
+        "location": "temporary.tsx",
+        "module": () => import('@/routes/lnmuseum/temporary.tsx')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Liaoning Provincial Museum",
+    "url": "www.lnmuseum.com.cn",
+    "zh": {
+      "name": "辽宁省博物馆"
+    }
+  },
   "loltw": {
     "routes": {
       "/news/:category?": {
@@ -47338,6 +47394,85 @@ export default {
     "name": "中国传媒大学",
     "url": "yz.cuc.edu.cn",
     "lang": "zh-CN"
+  },
+  "cugb": {
+    "routes": {
+      "/jwc/:channel?": {
+        "path": "/jwc/:channel?",
+        "categories": [
+          "university"
+        ],
+        "example": "/cugb/jwc/xszq",
+        "parameters": {
+          "channel": "栏目，默认为 `xszq` 学生专区"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "jwc.cugb.edu.cn/:channel"
+            ],
+            "target": "/jwc/:channel"
+          }
+        ],
+        "name": "教务处",
+        "maintainers": [
+          "syncmeta"
+        ],
+        "location": "jwc.ts",
+        "module": () => import('@/routes/cugb/jwc.ts')
+      },
+      "/news/:channel?": {
+        "path": "/news/:channel?",
+        "categories": [
+          "university"
+        ],
+        "example": "/cugb/news/bdxw",
+        "parameters": {
+          "channel": "栏目，默认为 `bdxw` 北地新闻"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.cugb.edu.cn/:channel.jhtml"
+            ],
+            "target": "/news/:channel"
+          }
+        ],
+        "name": "校园新闻",
+        "maintainers": [
+          "syncmeta"
+        ],
+        "location": "news.ts",
+        "module": () => import('@/routes/cugb/news.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "China University of Geosciences (Beijing)",
+    "url": "cugb.edu.cn",
+    "categories": [
+      "university"
+    ],
+    "description": "",
+    "lang": "zh-CN",
+    "zh": {
+      "name": "中国地质大学（北京）"
+    }
   },
   "cuilingmag": {
     "routes": {
