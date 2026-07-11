@@ -42788,10 +42788,10 @@
         "categories": [
           "travel"
         ],
-        "example": "/chnmuseum/zl/lszl/zdztzl",
+        "example": "/chnmuseum/zl/lszl/zdzt",
         "parameters": {
-          "type": "Exhibition type, supported values: zhanlanyugao（正在展出）、ztzl（主题展览）、jbcl（基本陈列）、ztcl（专题展览）、lszl（临时展览）、gbxz（国博巡展）. Default: All exhibitions.",
-          "subType": "subtype only works under type lszl（临时展览）, supported values: zdztzl（主题展览）、dfjpwwxl（精品文物展）、lswhxl（历史文化展）、kgfjxl（考古发现展）、kjcxz（科技创新展）、dywhxl（地域文化展）、jdmszpxl（经典美术展）、gjjlxl（国际交流展）"
+          "type": "Exhibition type, supported values: zhanlanyugao（正在展出）、jbcl（基本陈列）、ztcl（专题展览）、lszl（临时展览）、gjzl（国家展览）、gbxz（国博巡展）. Default: All exhibitions.",
+          "subType": "subtype only works under type lszl（临时展览）, supported values: zdzt（重大主题）、lswh（历史文化）、yscx（艺术创新）、gjjl（国际交流）"
         },
         "name": "Exhibitions",
         "maintainers": [
@@ -60412,8 +60412,8 @@
   },
   "hackernews": {
     "routes": {
-      "/:section?/:type?/:user?": {
-        "path": "/:section?/:type?/:user?",
+      "/:section?/:type?/:value?": {
+        "path": "/:section?/:type?/:value?",
         "categories": [
           "programming"
         ],
@@ -60421,13 +60421,13 @@
         "example": "/hackernews/threads/comments_list/dang",
         "parameters": {
           "section": {
-            "description": "Content section, default to `index`"
+            "description": "Content section, default to `index`. Common sections: `index`, `newest`, `ask`, `show`, `jobs`, `over`, `threads`, `submitted`. Any valid HN section (e.g. `best`, `front`, `active`) is also accepted"
           },
           "type": {
-            "description": "Link type, default to `sources`"
+            "description": "Content format, default to `sources`. `sources` links to original articles, `comments` fetches full comment threads, `comments_list` shows parent story with single comment"
           },
-          "user": {
-            "description": "Set user, only valid in `threads` and `submitted` sections"
+          "value": {
+            "description": "For `threads`/`submitted` sections, set user ID. For `over` section, set minimum points threshold (default 100). For other sections, appended as `?id=<value>` (e.g. `value=dang` → `?id=dang`)"
           }
         },
         "features": {
@@ -60446,12 +60446,12 @@
             ]
           }
         ],
-        "name": "User",
+        "name": "Stories",
         "maintainers": [
           "nczitzk",
           "xie-dongping"
         ],
-        "description": "Subscribe to the content of a specific user",
+        "description": "Subscribe to Hacker News content by section, user, or minimum points\n\nExamples:\n\n| HN100              | User submitted                       | User threads                       | Comments list                            |\n| ------------------ | ------------------------------------ | ---------------------------------- | ---------------------------------------- |\n| `/hackernews/over` | `/hackernews/submitted/sources/dang` | `/hackernews/threads/sources/dang` | `/hackernews/threads/comments_list/dang` |",
         "location": "index.ts",
         "module": "() => import('@/routes/hackernews/index.ts')"
       }
@@ -62074,6 +62074,61 @@
     "name": "黑龙江中医药大学",
     "url": "yjsy.hljucm.net",
     "lang": "zh-CN"
+  },
+  "hnmuseum": {
+    "routes": {
+      "/current-exhibitions/:type?": {
+        "path": "/current-exhibitions/:type?",
+        "categories": [
+          "travel"
+        ],
+        "example": "/hnmuseum/current-exhibitions/special",
+        "parameters": {
+          "type": "Exhibition type, supported values: special（临时展览 special+temporary）. Default: All exhibitions."
+        },
+        "name": "Current Exhibitions",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.hnmuseum.com/zh-hans/content/当前展览－基本陈列"
+            ],
+            "target": "/current-exhibitions"
+          }
+        ],
+        "location": "exhibitions.tsx",
+        "module": "() => import('@/routes/hnmuseum/exhibitions.tsx')"
+      },
+      "/hnmnews": {
+        "path": "/hnmnews",
+        "categories": [
+          "travel"
+        ],
+        "example": "/hnmuseum/hnmnews",
+        "name": "HNM News",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.hnmuseum.com/zh-hans/xiangbo_dongtai_news"
+            ],
+            "target": "/hnmnews"
+          }
+        ],
+        "location": "hnmnews.ts",
+        "module": "() => import('@/routes/hnmuseum/hnmnews.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Hunan Museum",
+    "url": "www.hnmuseum.com/zh-hans",
+    "zh": {
+      "name": "湖南省博物馆"
+    }
   },
   "hnrb": {
     "routes": {
