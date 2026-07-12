@@ -59357,7 +59357,7 @@ export default {
             "description": "Year, current year by default"
           }
         },
-        "description": "::: tip\nTo subscribe to [感染症発生動向調査週報](https://id-info.jihs.go.jp/surveillance/idwr/jp/idwr/2025/), where the source URL is `https://id-info.jihs.go.jp/surveillance/idwr/jp/idwr/2025/`, extract the certain parts from this URL to be used as parameters, resulting in the route as [`/go/jihs/idwr/2025`](https://rsshub.app/go/jihs/idwr/2025).\n:::",
+        "description": "::: tip\nTo subscribe to [感染症発生動向調査週報](https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/), where the source URL is `https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/`, extract the certain parts from this URL to be used as parameters, resulting in the route as [`/go/jihs/idwr/2025`](https://rsshub.app/go/jihs/idwr/2025).\n:::",
         "categories": [
           "government"
         ],
@@ -59373,7 +59373,7 @@ export default {
         "radar": [
           {
             "source": [
-              "id-info.jihs.go.jp/surveillance/idwr/jp/idwr/:year"
+              "id-info.jihs.go.jp/surveillance/idwr/idwr/:year"
             ]
           }
         ],
@@ -59391,7 +59391,7 @@ export default {
               "description": "年份，默认为当前年份，可在对应页 URL 中找到"
             }
           },
-          "description": "::: tip\n若订阅 [传染病发生动向调查周报](https://id-info.jihs.go.jp/surveillance/idwr/jp/idwr/2025/)，网址为 `https://id-info.jihs.go.jp/surveillance/idwr/jp/idwr/2025/`，请截取 `https://id-info.jihs.go.jp/surveillance/idwr/jp/idwr/` 到末尾 `/` 的部分 `2025` 作为 `year` 参数填入，此时目标路由为 [`/go/jihs/idwr/2025`](https://rsshub.app/go/jihs/idwr/2025)。\n:::"
+          "description": "::: tip\n若订阅 [传染病发生动向调查周报](https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/)，网址为 `https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/`，请截取 `https://id-info.jihs.go.jp/surveillance/idwr/idwr/` 到末尾 `/` 的部分 `2025` 作为 `year` 参数填入，此时目标路由为 [`/go/jihs/idwr/2025`](https://rsshub.app/go/jihs/idwr/2025)。\n:::"
         },
         "location": "jihs/idwr.ts",
         "module": () => import('@/routes/go/jihs/idwr.ts')
@@ -110415,8 +110415,8 @@ export default {
         },
         "features": {
           "requireConfig": false,
-          "requirePuppeteer": true,
-          "antiCrawler": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
