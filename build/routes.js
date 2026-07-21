@@ -19897,6 +19897,7 @@ export default {
               "optional": true
             }
           ],
+          "requirePuppeteer": true,
           "nsfw": true
         },
         "location": "index.ts",
