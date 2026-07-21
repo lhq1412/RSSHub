@@ -57195,6 +57195,61 @@ export default {
     "url": "pm.gc.ca",
     "lang": "en"
   },
+  "gdmuseum": {
+    "routes": {
+      "/exhibition/:type?": {
+        "path": "/exhibition/:type?",
+        "categories": [
+          "travel"
+        ],
+        "example": "/gdmuseum/exhibition/temp",
+        "parameters": {
+          "type": "Exhibition type, supported values: temp(临时展览), default: All exhibitions."
+        },
+        "name": "Current Exhibitions",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.gdmuseum.org.cn/col9/list"
+            ],
+            "target": "/exhibition"
+          }
+        ],
+        "location": "exhibition.tsx",
+        "module": () => import('@/routes/gdmuseum/exhibition.tsx')
+      },
+      "/information": {
+        "path": "/information",
+        "categories": [
+          "travel"
+        ],
+        "example": "/gdmuseum/information",
+        "name": "Information",
+        "maintainers": [
+          "magazian"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.gdmuseum.org.cn/cn/col51/list"
+            ],
+            "target": "/information"
+          }
+        ],
+        "location": "news.ts",
+        "module": () => import('@/routes/gdmuseum/news.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "Guangdong Museum",
+    "url": "gdmuseum.org.cn",
+    "zh": {
+      "name": "广东省博物馆"
+    }
+  },
   "gdsrx": {
     "routes": {
       "/:id?": {
