@@ -113333,6 +113333,32 @@
         "location": "list.ts",
         "module": "() => import('@/routes/zju/list.ts')"
       },
+      "/math/:type": {
+        "path": "/math/:type",
+        "categories": [
+          "university"
+        ],
+        "example": "/zju/math/0",
+        "parameters": {
+          "type": "分类，见下表"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "数学科学学院",
+        "description": "| 重要通知 | 本科生 | 研究生 | 科研 | 教学 | 人事 | 公示 |\n| -------- | ------ | ------ | ---- | ---- | ---- | ---- |\n| 0        | 1      | 2      | 3    | 4    | 5    | 6    |",
+        "maintainers": [
+          "Alex222222222222"
+        ],
+        "url": "www.math.zju.edu.cn",
+        "location": "math/index.ts",
+        "module": "() => import('@/routes/zju/math/index.ts')"
+      },
       "/physics/:type": {
         "path": "/physics/:type",
         "categories": [
